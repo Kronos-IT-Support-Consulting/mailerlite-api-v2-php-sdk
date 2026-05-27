@@ -26,7 +26,7 @@ This library is built atop of [PSR-7](https://www.php-fig.org/psr/psr-7/) and
 [PSR-18](https://www.php-fig.org/psr/psr-18/). If you are receiving `Http\Discovery\Exception\DiscoveryFailedException` exception, you will need to run:
 
 ```bash
-composer require php-http/guzzle6-adapter
+composer require php-http/guzzle7-adapter
 ```
 
 ##### Manual (preferable for shared hostings)
@@ -81,7 +81,7 @@ Here is an example how to use [Guzzle](https://docs.guzzlephp.org/) instead of c
 
 ```php
 $guzzle = new \GuzzleHttp\Client();
-$guzzleClient = new \Http\Adapter\Guzzle6\Client($guzzle);
+$guzzleClient = new \Http\Adapter\Guzzle7\Client($guzzle);
 
 $mailerliteClient = new \MailerLiteApi\MailerLite('your-api-key', $guzzleClient);
 ```
