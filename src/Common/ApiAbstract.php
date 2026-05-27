@@ -18,7 +18,7 @@ abstract class ApiAbstract {
 
     private $_offset = null;
 
-    private $_order = null;
+    private $_orders = null;
 
     private $_where = null;
 
@@ -59,7 +59,7 @@ abstract class ApiAbstract {
             throw new \Exception('ID must be set');
         }
 
-        $response = $this->restClient->get($this->endpoint . '/' . $id);
+        $response = $this->restClient->get($this->endpoint . '/' . urlencode($id));
 
         return $response['body'];
     }
@@ -85,7 +85,7 @@ abstract class ApiAbstract {
      */
     public function update($id, $data)
     {
-        $response = $this->restClient->put($this->endpoint . '/' . $id, $data);
+        $response = $this->restClient->put($this->endpoint . '/' . urlencode($id), $data);
 
         return $response['body'];
     }
@@ -98,7 +98,7 @@ abstract class ApiAbstract {
      */
     public function delete($id)
     {
-        $response = $this->restClient->delete($this->endpoint . '/' . $id);
+        $response = $this->restClient->delete($this->endpoint . '/' . urlencode($id));
 
         return $response['body'];
     }

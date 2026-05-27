@@ -6,7 +6,7 @@ use MailerLiteApi\Common\RestClient;
 use MailerLiteApi\Common\ApiConstants;
 
 use GuzzleHttp\Client as GuzzleClient;
-use Http\Adapter\Guzzle6\Client as GuzzleAdapter;
+use Http\Adapter\Guzzle7\Client as GuzzleAdapter;
 
 /**
  * Class RestClientTest
